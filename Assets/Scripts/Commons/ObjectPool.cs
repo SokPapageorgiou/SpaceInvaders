@@ -3,15 +3,16 @@ using UnityEngine;
 
 namespace Commons
 {
-    public class ObjectPool
+    public static class ObjectPool
     {
-        public static Queue<GameObject> Create(GameObject gameObject, int poolSize, Transform parent)
+        public static Queue<GameObject> Create(GameObject gameObject, int poolSize)
         {
             Queue<GameObject> pool = new Queue<GameObject>();
 
             for (int i = 0; i < poolSize; i++)
             {
-                GameObject temp = Object.Instantiate(gameObject, parent);
+                GameObject temp = Object.Instantiate(gameObject);
+                temp.SetActive(false);
                 pool.Enqueue(temp);
             }
             

@@ -5,8 +5,7 @@ using UnityEngine;
 
 namespace Arsenal
 {
-    [RequireComponent(typeof(Gun))]
-    public class Bullet : MonoBehaviour
+    public class BulletFire : MonoBehaviour
     {
         [SerializeField] private GameObject bullet;
         [SerializeField] private int magazineSize;
@@ -16,7 +15,7 @@ namespace Arsenal
 
         private void Awake()
         {
-            _magazine = ObjectPool.Create(bullet, magazineSize, this.transform);
+            _magazine = ObjectPool.Create(bullet, magazineSize);
             Gun.OnShoot += ShootBullet;
         }
 
@@ -30,7 +29,6 @@ namespace Arsenal
             _tempBullet = _magazine.Dequeue();
             SetPositionToOrigin();
             Activate();
-            FireUp();
             _magazine.Enqueue(_tempBullet);
         }
 
@@ -42,11 +40,6 @@ namespace Arsenal
         private void Activate()
         {
             _tempBullet.SetActive(true);
-        }
-
-        private void FireUp()
-        {
-            Debug.Log("I am flying!!!");
         }
     }    
 }
