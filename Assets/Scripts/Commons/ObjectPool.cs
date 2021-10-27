@@ -15,8 +15,6 @@ namespace Commons
                 pool.Enqueue(temp);
             }
             
-            Debug.Log(pool.Count);
-            
             return pool;
         }
     }

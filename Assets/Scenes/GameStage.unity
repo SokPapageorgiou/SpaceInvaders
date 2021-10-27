@@ -384,6 +384,10 @@ PrefabInstance:
       propertyPath: _bullet
       value: 
       objectReference: {fileID: 553380271}
+    - target: {fileID: 415324539140988290, guid: a09d056ed2fce43498821dba0dd24839, type: 3}
+      propertyPath: magazineSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2078255835765286818, guid: a09d056ed2fce43498821dba0dd24839, type: 3}
       propertyPath: m_Name
       value: Player
