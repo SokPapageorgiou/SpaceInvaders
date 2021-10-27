@@ -1,19 +1,34 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Arsenal
 {
     [RequireComponent(typeof(Gun))]
     public class Magazine : MonoBehaviour
     {
+        [SerializeField] private GameObject bullet;
+        
         private void Awake()
         {
-            Gun.OnShoot += BulletMovement;
+            Gun.OnShoot += ShootBullet;
         }
 
-        private void BulletMovement(object sender, EventArgs e)
+        private void ShootBullet(object sender, EventArgs e)
         {
-            Debug.Log("I am flying!!!");
+            SetPositionToOrigin();
+            Activate();
+        }
+
+        private void SetPositionToOrigin()
+        {
+            bullet.transform.position = this.transform.position;
+        }
+
+        private void Activate()
+        {
+            bullet.SetActive(true);
         }
     }    
 }
