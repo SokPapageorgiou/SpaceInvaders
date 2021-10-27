@@ -5,11 +5,11 @@ namespace Arsenal
 {
     public class Gun : MonoBehaviour
     {
-        private event EventHandler OnShoot;
+        public static event EventHandler OnShoot;
 
         private void Update()
         {
-            if (Input.GetKeyDown("Space")) OnShoot?.Invoke(this,EventArgs.Empty);
+            if (Input.GetKeyDown(KeyCode.Space)) OnShoot?.Invoke(this,EventArgs.Empty);
         }
     }    
 }
