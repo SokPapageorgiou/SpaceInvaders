@@ -15,7 +15,7 @@ namespace Arsenal
 
         private void Awake()
         {
-            magazine = ObjectPool.Create(bullet, 10);
+            magazine = ObjectPool.Create(bullet, 10, this.transform);
             Gun.OnShoot += ShootBullet;
         }
 
