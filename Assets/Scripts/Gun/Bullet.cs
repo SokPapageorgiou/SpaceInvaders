@@ -1,17 +1,21 @@
 using System;
-using Unity.VisualScripting;
+using System.Collections.Generic;
+using Commons;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 namespace Arsenal
 {
     [RequireComponent(typeof(Gun))]
-    public class Magazine : MonoBehaviour
+    public class Bullet : MonoBehaviour
     {
         [SerializeField] private GameObject bullet;
-        
+
+        private Queue<GameObject> magazine;
+
         private void Awake()
         {
+            magazine = ObjectPool.Create(bullet, 10);
             Gun.OnShoot += ShootBullet;
         }
 
