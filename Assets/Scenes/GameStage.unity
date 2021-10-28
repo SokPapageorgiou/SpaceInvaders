@@ -324,6 +324,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5146669762941162875, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146669762941162875, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 3851253131305801113, guid: 6e541491729d097418dc8653650315ca, type: 3}
     - target: {fileID: 8412603475504793419, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: m_Name
       value: AlienPlacer
