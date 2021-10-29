@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Commons;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Grid
 {

@@ -325,12 +325,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
+      propertyPath: gridSize.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
+      propertyPath: gridSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: _gridSize.x
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: _gridSize.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8412603475504793419, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: m_Name
