@@ -23,6 +23,7 @@ namespace Grid
         private void LoadComponents()
         {
             GridStatsLoader temp = GetComponent<GridStatsLoader>();
+            _stageConstrains = temp.stageConstrains;
             _alien = temp.alien;
         }
 
@@ -38,11 +39,16 @@ namespace Grid
 
         private void PlaceObjects()
         {
-            float pointA;
-            
-            foreach (GameObject alien in _alienArmy)
+            float pointA = _stageConstrains.Border.x;
+
+            for (int i = 0; i < _gridSize.y; i++)
             {
-                
+                for (int j = 0; j < _gridSize.x; j++)
+                {
+                    GameObject temp = _alienArmy.Dequeue();
+                    temp.SetActive(true);
+                    _alienArmy.Enqueue(temp);
+                }
             }
         }
     }
