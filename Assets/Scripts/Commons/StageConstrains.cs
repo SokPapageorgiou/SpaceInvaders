@@ -10,10 +10,12 @@ namespace Commons
         [SerializeField] private Vector2 alienSpeed;
 
         public Vector3 Border => border;
-        public Vector2 AlienSpeed
+        public Vector2 AlienSpeed => alienSpeed;
+
+        public void InvertXSpeed()
         {
-            get => alienSpeed;
-            set => alienSpeed = value;
+            alienSpeed.x *= -1;
         }
+        
     }
 }
