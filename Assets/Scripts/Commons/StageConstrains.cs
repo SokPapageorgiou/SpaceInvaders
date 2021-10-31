@@ -7,9 +7,13 @@ namespace Commons
     public class StageConstrains : ScriptableObject
     {
         [SerializeField] private Vector3 border;
-        [SerializeField] private float alienSpeed;
+        [SerializeField] private Vector2 alienSpeed;
 
         public Vector3 Border => border;
-        public float AlienSpeed => alienSpeed;
+        public Vector2 AlienSpeed
+        {
+            get => alienSpeed;
+            set => alienSpeed = value;
+        }
     }
 }

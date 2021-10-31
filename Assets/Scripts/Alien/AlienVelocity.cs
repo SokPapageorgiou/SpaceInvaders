@@ -18,8 +18,10 @@ namespace Alien
 
         private void FixedUpdate()
         {
-            float speed = _stageConstrains.AlienSpeed;
-            _rigidBody.velocity = new Vector3(0, speed, 0);
+            float xSpeed = _stageConstrains.AlienSpeed.x;
+            float ySpeed = _stageConstrains.AlienSpeed.y;
+            
+            _rigidBody.velocity = new Vector3(xSpeed, ySpeed, 0);
         }
     } 
 }
