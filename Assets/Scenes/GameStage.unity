@@ -223,6 +223,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 415324538374199333, guid: a09d056ed2fce43498821dba0dd24839, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 2078255835765286818, guid: a09d056ed2fce43498821dba0dd24839, type: 3}
       propertyPath: m_Name
       value: Player
@@ -325,12 +329,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
+      propertyPath: yOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: gridSize.x
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: gridSize.y
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: _gridSize.x

@@ -8,6 +8,7 @@ namespace Grid
     public class GridCreator : MonoBehaviour
     {
         [SerializeField] private Vector2 gridSize;
+        [SerializeField] private float yOffset;
         
         private StageConstrains _stageConstrains;
         private Queue<GameObject> _alienArmy;
@@ -46,19 +47,21 @@ namespace Grid
                     GameObject temp = _alienArmy.Dequeue();
                     temp.SetActive(true);
                     
-                    temp.transform.position = SetPosition(j);
+                    temp.transform.position = SetPosition(i, j);
                     
                     _alienArmy.Enqueue(temp);
                 }
             }
         }
 
-        private Vector3 SetPosition(int j)
+        private Vector3 SetPosition(int i, int j)
         {
             float xOffset = CalculateXOffset();
             float x = CalculateXPosition(j);
+
+            float y = CalculateYPosition(i);
             
-            return new Vector3(x - xOffset,0,0);
+            return new Vector3(x - xOffset, y + yOffset,0);
         }
 
         private float CalculateXOffset()
@@ -69,6 +72,11 @@ namespace Grid
         private float CalculateXPosition(int counter)
         {
             return _stageConstrains.Border.x * (1 - (2  * counter)/gridSize.x);
+        }
+
+        private float CalculateYPosition(int counter)
+        {
+            return counter;
         }
     }
 }
