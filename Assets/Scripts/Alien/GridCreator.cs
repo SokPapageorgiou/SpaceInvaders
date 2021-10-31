@@ -30,7 +30,7 @@ namespace Grid
 
         private void CreatePool()
         {
-            _alienArmy = ObjectPool.Create(_alien, ArmySize());
+            _alienArmy = ObjectPool.Create(_alien, ArmySize(), transform);
         }
 
         private int ArmySize()

@@ -18,5 +18,19 @@ namespace Commons
             
             return pool;
         }
+        
+        public static Queue<GameObject> Create(GameObject gameObject, int poolSize, Transform parent)
+        {
+            Queue<GameObject> pool = new Queue<GameObject>();
+
+            for (int i = 0; i < poolSize; i++)
+            {
+                GameObject temp = Object.Instantiate(gameObject, parent);
+                temp.SetActive(false);
+                pool.Enqueue(temp);
+            }
+            
+            return pool;
+        }
     }
 }
