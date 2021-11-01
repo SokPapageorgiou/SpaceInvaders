@@ -5,6 +5,8 @@ namespace Grid
 {
     public class GridStatsLoader : StageConstrainsLoader
     {
+        public GridStats gridStats;
+        
         [Header("Enemies")] 
         public GameObject alien;
     }

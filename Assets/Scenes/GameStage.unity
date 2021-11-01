@@ -338,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: gridSize.x
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3210741527149170680, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: gridSize.y
@@ -352,6 +352,10 @@ PrefabInstance:
       propertyPath: _gridSize.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5146669762941162875, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
+      propertyPath: gridStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 192ad8bae037b1340952065fabf3dfcb, type: 2}
     - target: {fileID: 8412603475504793419, guid: c96985deabee06147a0f218ae0f6dbc6, type: 3}
       propertyPath: m_Name
       value: AlienPlacer

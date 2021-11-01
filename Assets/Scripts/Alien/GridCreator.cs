@@ -7,10 +7,10 @@ namespace Grid
     [RequireComponent(typeof(GridStatsLoader))]
     public class GridCreator : MonoBehaviour
     {
-        [SerializeField] private Vector2 gridSize;
         [SerializeField] private float yOffset;
         
         private StageConstrains _stageConstrains;
+        private GridStats _gridStats;
         private Queue<GameObject> _alienArmy;
         private GameObject _alien;
 
@@ -25,6 +25,7 @@ namespace Grid
         {
             GridStatsLoader temp = GetComponent<GridStatsLoader>();
             _stageConstrains = temp.stageConstrains;
+            _gridStats = temp.gridStats;
             _alien = temp.alien;
         }
 
@@ -35,14 +36,15 @@ namespace Grid
 
         private int ArmySize()
         {
+            Vector2 gridSize = new Vector2(_gridStats.GridSize.x,_gridStats.GridSize.x);
             return (int) (gridSize.x * gridSize.y);
         }
 
         private void PlaceObjects()
         {
-            for (int i = 0; i < gridSize.y; i++)
+            for (int i = 0; i < _gridStats.GridSize.y; i++)
             {
-                for (int j = 0; j < gridSize.x; j++)
+                for (int j = 0; j < _gridStats.GridSize.x; j++)
                 {
                     GameObject temp = _alienArmy.Dequeue();
                     temp.SetActive(true);
@@ -66,12 +68,12 @@ namespace Grid
 
         private float CalculateXOffset()
         {
-            return _stageConstrains.Border.x / gridSize.x;
+            return _stageConstrains.Border.x / _gridStats.GridSize.x;
         }
 
         private float CalculateXPosition(int counter)
         {
-            return _stageConstrains.Border.x * (1 - (2  * counter)/gridSize.x);
+            return _stageConstrains.Border.x * (1 - (2  * counter)/_gridStats.GridSize.x);
         }
 
         private float CalculateYPosition(int counter)
