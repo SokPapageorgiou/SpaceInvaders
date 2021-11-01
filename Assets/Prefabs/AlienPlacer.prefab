@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageConstrains: {fileID: 11400000, guid: 0ed8c1544da1e9041a3041f406d243d7, type: 2}
-  gridStats: {fileID: 11400000, guid: d00af0eb93e59ef44831ead3d1fdc5ad, type: 2}
+  gridStats: {fileID: 11400000, guid: 192ad8bae037b1340952065fabf3dfcb, type: 2}
   alien: {fileID: 3851253131305801113, guid: 6e541491729d097418dc8653650315ca, type: 3}
 --- !u!114 &3210741527149170680
 MonoBehaviour:
@@ -59,3 +59,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5bf8b0ae2aff2a448696133991a6ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yOffset: 2

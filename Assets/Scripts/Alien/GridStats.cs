@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Grid
@@ -18,7 +17,7 @@ namespace Grid
             _cellElements = new GameObject[(int) gridSize.x, (int) gridSize.y];
         }
 
-        public void PopulateCellPosition(int j, int i, GameObject currentObject)
+        public void PopulateCell(int j, int i, GameObject currentObject)
         {
             _cellElements[j, i] = currentObject;
         }
