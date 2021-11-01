@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Grid
@@ -6,29 +7,29 @@ namespace Grid
     public class GridStats : ScriptableObject
     {
         [SerializeField] private Vector2 gridSize;
-        private Vector2[,] _cellPositions;
+        private GameObject[,] _cellElements;
 
         public Vector2 GridSize => gridSize;
 
-        public Vector2[,] CellPositions => _cellPositions;
+        public GameObject[,] CellPositions => _cellElements;
         
         public void InitiateCellPosition()
         {
-            _cellPositions = new Vector2[(int) gridSize.x, (int) gridSize.y];
+            _cellElements = new GameObject[(int) gridSize.x, (int) gridSize.y];
         }
 
-        public void PopulateCellPosition(int j, int i, Vector3 currentPosition)
+        public void PopulateCellPosition(int j, int i, GameObject currentObject)
         {
-            _cellPositions[j, i] = currentPosition;
+            _cellElements[j, i] = currentObject;
         }
 
         public void PrintOutPositions()
         {
-            for (int i = 0; i < _cellPositions.GetLength(1); i++)
+            for (int i = 0; i < _cellElements.GetLength(1); i++)
             {
-                for (int j = 0; j < _cellPositions.GetLength(0); j++)
+                for (int j = 0; j < _cellElements.GetLength(0); j++)
                 {
-                    Debug.Log($"{j}, {i}: {_cellPositions[j, i]}");
+                    Debug.Log($"{j}, {i}: {_cellElements[j, i].transform.position}");
                 }
             }
         }

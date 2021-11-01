@@ -52,7 +52,7 @@ namespace Grid
                     temp.SetActive(true);
                     
                     temp.transform.position = SetPosition(j, i);
-                    _gridStats.PopulateCellPosition(j,i,temp.transform.position);
+                    _gridStats.PopulateCellPosition(j,i,temp);
                     
                     _alienArmy.Enqueue(temp);
                 }
