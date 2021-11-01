@@ -22,16 +22,5 @@ namespace Grid
         {
             _cellElements[j, i] = currentObject;
         }
-
-        public void PrintOutPositions()
-        {
-            for (int i = 0; i < _cellElements.GetLength(1); i++)
-            {
-                for (int j = 0; j < _cellElements.GetLength(0); j++)
-                {
-                    Debug.Log($"{j}, {i}: {_cellElements[j, i].transform.position}");
-                }
-            }
-        }
     }
 }

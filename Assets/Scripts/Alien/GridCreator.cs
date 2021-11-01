@@ -57,8 +57,6 @@ namespace Grid
                     _alienArmy.Enqueue(temp);
                 }
             }
-            
-            _gridStats.PrintOutPositions();
         }
 
         private Vector3 SetPosition(int j, int i)
