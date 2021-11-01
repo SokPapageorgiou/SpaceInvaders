@@ -24,8 +24,11 @@ namespace Grid
         private void LoadComponents()
         {
             GridStatsLoader temp = GetComponent<GridStatsLoader>();
+            
             _stageConstrains = temp.stageConstrains;
             _gridStats = temp.gridStats;
+            _gridStats.InitiateCellPosition();
+            
             _alien = temp.alien;
         }
 
@@ -36,8 +39,7 @@ namespace Grid
 
         private int ArmySize()
         {
-            Vector2 gridSize = new Vector2(_gridStats.GridSize.x,_gridStats.GridSize.x);
-            return (int) (gridSize.x * gridSize.y);
+            return (int) (_gridStats.GridSize.x * _gridStats.GridSize.y);
         }
 
         private void PlaceObjects()
@@ -49,14 +51,17 @@ namespace Grid
                     GameObject temp = _alienArmy.Dequeue();
                     temp.SetActive(true);
                     
-                    temp.transform.position = SetPosition(i, j);
+                    temp.transform.position = SetPosition(j, i);
+                    _gridStats.PopulateCellPosition(j,i,temp.transform.position);
                     
                     _alienArmy.Enqueue(temp);
                 }
             }
+            
+            _gridStats.PrintOutPositions();
         }
 
-        private Vector3 SetPosition(int i, int j)
+        private Vector3 SetPosition(int j, int i)
         {
             float xOffset = CalculateXOffset();
             float x = CalculateXPosition(j);

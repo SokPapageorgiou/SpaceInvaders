@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: StageConstrains
   m_EditorClassIdentifier: 
   border: {x: 7, y: 0, z: 0}
-  alienSpeed: {x: 1, y: -0.05}
+  alienSpeed: {x: 1, y: -0.2}
